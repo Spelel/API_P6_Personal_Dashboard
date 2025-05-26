@@ -5,9 +5,6 @@
 body {
     margin: 0;
     background: no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     color: whitesmoke;
     font-size: 2rem;
@@ -47,4 +44,19 @@ div#crypto-bottom {
 .crypto img {
     height: 3rem;
     margin-right: 10px;
+}
+
+.weather {
+    padding-right: 25px;
+}
+
+.weatherTop {
+    display: flex;
+    flex-direction: row;
+}
+
+.weatherName {
+    margin: 0;
+    text-align: center;
+    font-size: 2.45rem;
 }

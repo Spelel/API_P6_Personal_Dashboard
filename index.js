@@ -13,7 +13,7 @@ function bodyBackground() {
 }
 
 bodyBackground()
-setInterval(bodyBackground, 120000)
+// setInterval(bodyBackground, 120000)
 
 
 
@@ -64,8 +64,13 @@ function success(position) {
         .then(data => {
             console.log(data)
             const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+            let temp = Math.round(data.main.temp)
             document.getElementById("weather").innerHTML =`
-            <img src="${iconUrl}">
+            <div class="weatherTop">
+                <img src="${iconUrl}">
+                <p>${temp} ℃</p>
+            </div>
+            <p class="weatherName" >${data.name}</p>
             `
         })
 //   console.log( "Latitude: " + position.coords.latitude + "Longitude: " + position.coords.longitude)
@@ -76,3 +81,4 @@ function error() {
 }
 
 getLocation()
+
