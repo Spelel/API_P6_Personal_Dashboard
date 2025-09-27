@@ -50,35 +50,35 @@ function time() {
 
 setInterval(time, 1000)
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
-  } else { 
-    console.log("Geolocation is not supported by this browser.")
-  }
-}
+// function getLocation() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(success, error);
+//   } else { 
+//     console.log("Geolocation is not supported by this browser.")
+//   }
+// }
 
-function success(position) {
-    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-            let temp = Math.round(data.main.temp)
-            document.getElementById("weather").innerHTML =`
-            <div class="weatherTop">
-                <img src="${iconUrl}">
-                <p>${temp} ℃</p>
-            </div>
-            <p class="weatherName" >${data.name}</p>
-            `
-        })
-//   console.log( "Latitude: " + position.coords.latitude + "Longitude: " + position.coords.longitude)
-}
+// function success(position) {
+//     fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
+//         .then(res => res.json())
+//         .then(data => {
+//             console.log(data)
+//             const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+//             let temp = Math.round(data.main.temp)
+//             document.getElementById("weather").innerHTML =`
+//             <div class="weatherTop">
+//                 <img src="${iconUrl}">
+//                 <p>${temp} ℃</p>
+//             </div>
+//             <p class="weatherName" >${data.name}</p>
+//             `
+//         })
+// //   console.log( "Latitude: " + position.coords.latitude + "Longitude: " + position.coords.longitude)
+// }
 
-function error() {
-  alert("Sorry, no position available.");
-}
+// function error() {
+//   alert("Sorry, no position available.");
+// }
 
-getLocation()
+// getLocation()
 
