@@ -5,6 +5,6 @@ FROM nginx:alpine
 COPY . /usr/share/nginx/html
 
 # Expose port 80 for the web server
-EXPOSE 80
+EXPOSE 3000
 
 # The default Nginx CMD runs automatically
